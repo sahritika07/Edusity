@@ -7,7 +7,7 @@ import user_2 from '../../assets/user-2.png'
 import user_3 from '../../assets/user-3.png'
 import user_4 from '../../assets/user-4.png'
 
-const Testimonials = () => {
+const Testimonials = ({subTitle,title}) => {
 
     const slider = useRef()
     let tx =0;
@@ -27,6 +27,10 @@ const Testimonials = () => {
 
   return (
     <div className='testimonials'>
+        <div className="testimonials-header">
+        <h3 className="sub-title">{subTitle}</h3>
+        <h2 className="main-title">{title}</h2>
+      </div>
        <img src={next_icon} alt="" className='next-btn' onClick={slideForward}/>
        <img src={back_icon} alt="" className='back-btn' onClick={slideBackward}/>
        <div className="slider">

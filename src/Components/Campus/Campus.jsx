@@ -6,9 +6,13 @@ import gallery_3 from "../../assets/gallery-3.png"
 import gallery_4 from "../../assets/gallery-4.png"
 import white_arrow from "../../assets/white-arrow.png"
 
-const Campus = () => {
+const Campus = ({subTitle,title}) => {
   return (
     <div className='campus'>
+      <div className="campus-header">
+        <h3 className="sub-title">{subTitle}</h3>
+        <h2 className="main-title">{title}</h2>
+      </div>
         <div className="gallery">
             <img src={gallery_1} alt="" />
             <img src={gallery_2} alt="" />

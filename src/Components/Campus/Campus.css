@@ -2,7 +2,34 @@
     margin: 60px auto;
     width: 90%;
     text-align: center;
+    /* margin-top: 30px; */
 }
+
+
+/* .testimonials{
+    margin: 60px auto;
+    padding: 0 60px;
+    position: relative;
+    width: 90%;
+    text-align: center;
+} */
+
+
+.campus-header {
+    margin-bottom: 30px;
+  }
+  
+  .sub-title {
+    color: #212EA0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .main-title {
+    font-size: 2rem;
+    color: #000F38;
+  }
 
 .gallery{
     display: flex;

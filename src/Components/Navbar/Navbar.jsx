@@ -1,33 +1,63 @@
-import React, { useEffect, useState } from 'react'
-import './Navbar.css'
-import logo from '../../assets/logo.png'
-import { Link } from 'react-scroll'
+
+
+import React, { useEffect, useState } from 'react';
+import './Navbar.css';
+import logo from '../../assets/logo.png';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
-
-  const [sticky, setSticky] = useState(false)
+  const [sticky, setSticky] = useState(false);
 
   useEffect(() => {
-   window.addEventListener('scroll', ()=> {
-      window.scrollY > 50 ? setSticky(true) : setSticky(false)
-   })
-  }, [])
-  
+    const handleScroll = () => {
+      setSticky(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className= {`container ${sticky ? 'dark-nav': ' ' }`} >
-        <img src={logo} alt="" className='logo'/>
-        <ul>
-            <li><Link to='hero' smooth={true} offset={0} duration={500}>Home</Link></li>
-            <li><Link to='program' smooth={true} offset={0} duration={500}>Program</Link></li>
-            <li><Link to='about' smooth={true} offset={0} duration={500}>About us</Link></li>
-            <li><Link to='campus' smooth={true} offset={0} duration={500}>Campus</Link></li>
-            <li><Link to='testimonials' smooth={true} offset={0} duration={500}>Testimonials</Link></li>
-            <li> <Link to='contact' smooth={true} offset={0} duration={500} className='btn'>Contact Us</Link></li>
-        </ul>
-
-
+    <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
+      <img src={logo} alt="Logo" className="logo" />
+      <ul>
+        <li>
+          <NavLink to="/" className="nav-link" exact>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/programs" className="nav-link">
+            Program
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/about" className="nav-link">
+            About Us
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/campus" className="nav-link">
+            Campus
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/testimonials" className="nav-link">
+            Testimonials
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact" className="btn">
+            Contact Me
+          </NavLink>
+        </li>
+      </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

@@ -1,4 +1,4 @@
-nav{
+/* nav{
     width: 100%;
     
     color: #fff;
@@ -27,3 +27,95 @@ nav ul li{
     background-color: #212EA0;
     transition: 0.5s;
 }
+
+
+.navbar ul li a.active {
+    color: #fff;
+    font-weight: bold;
+  } */
+
+
+/* Ensure the navbar is fixed at the top */
+nav {
+    width: 100%;
+    background-color: #212EA0; /* Default background color */
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* High z-index to stay on top of other elements */
+    transition: 0.5s ease-in-out;
+  }
+  
+  /* Adjust logo size */
+  .logo {
+    width: 150px;
+    height: auto;
+  }
+  
+  /* Style for navbar links */
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    color: #ffd700; /* Change color on hover or when active */
+    font-weight: bold;
+  }
+  
+  /* Style for the button */
+  .btn {
+    padding: 8px 15px;
+    background-color: #ffd700;
+    color: #212EA0;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .btn:hover {
+    background-color: #fff;
+    color: #212EA0;
+  }
+  
+  /* Sticky Navbar Style */
+  .dark-nav {
+    background-color: #000080;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav ul li {
+      margin: 10px 0;
+    }
+  
+    .logo {
+      width: 120px;
+    }
+  }
+  
